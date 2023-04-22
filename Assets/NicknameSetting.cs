@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class NicknameSetting : MonoBehaviour
 {
-    public GameSetting GS;
+    public GameController GC;
     public InputField[] inputs;
     public Button buttonGameStart;
+    public GameObject panelNickname, panelGame;
 
     private void Start()
     {
-        for (int i = 0; i < GS.person; i++)
+        for (int i = 0; i < GC.johab[0]; i++)
         {
             inputs[i].interactable = true;
         }
@@ -19,7 +20,7 @@ public class NicknameSetting : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < GS.person; i++)
+        for (int i = 0; i < GC.johab[0]; i++)
         {
             if (inputs[i].text == "")
             {
@@ -32,9 +33,12 @@ public class NicknameSetting : MonoBehaviour
 
     public void ButtonGameStart()
     {
-        for (int i = 0; i < GS.person; i++)
+        for (int i = 0; i < GC.johab[0]; i++)
         {
-            print(inputs[i].text);
+            GC.nicknames[i] = inputs[i].text;
         }
+
+        panelNickname.SetActive(false);
+        panelGame.SetActive(true);
     }
 }

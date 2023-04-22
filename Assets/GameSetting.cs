@@ -7,6 +7,7 @@ public class GameSetting : MonoBehaviour
 {
     public GameObject panelSetting;
     public GameObject panelNickname;
+    public GameController GC;
 
     [Header("Person")]
     public Text textPerson;
@@ -58,7 +59,11 @@ public class GameSetting : MonoBehaviour
         int doctor = toggleDoctor.isOn ? 1:0;
         int cop = toggleCop.isOn ? 1 : 0;
 
-        print((person, mafia, doctor, cop));
+        GC.johab[0] = person;
+        GC.johab[1] = mafia;
+        GC.johab[2] = doctor;
+        GC.johab[3] = cop;
+        GC.johab[4] = person - mafia - doctor - cop;
 
         panelSetting.SetActive(false);
         panelNickname.SetActive(true);
