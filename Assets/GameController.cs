@@ -94,6 +94,10 @@ public class GameController : MonoBehaviour
     public GameObject panelNight;
     public Button[] buttonNights;
     public Text textPlayer;
+    public GameObject buttonNight, scrollNight, buttonNext;
+    private int nightIndex = 0;
+    private int killermafia, mafiaPick, doctorPick, copPick;
+    public Text textCop;
 
     public void FirstMorning()
     {
@@ -119,13 +123,18 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void Elimination(int idx)
+    {
+        members[0] -= 1;                // 총원 한 명 감소
+        members[players[idx]] -= 1;     // 해당 직업 한 명 감소
+        alives[idx] = false;            // 해당 사람 죽음
+    }
+
     public void ButtonVote()
     {
         int thisdie = int.Parse(EventSystem.current.currentSelectedGameObject.name);
 
-        members[0] -= 1;                    // 총원 한 명 감소
-        members[players[thisdie]] -= 1;     // 해당 직업 한 명 감소
-        alives[thisdie] = false;            // 해당 사람 죽음
+        Elimination(thisdie);
 
         panelMorning.SetActive(false);
         TimeToNight();
@@ -137,6 +146,14 @@ public class GameController : MonoBehaviour
 
         panelNight.SetActive(true);
 
+        nightIndex = 0;
+        killermafia = RandomOneOfMafia();
+        mafiaPick = 16;
+        doctorPick = 16;
+        copPick = 16;
+
+        textPlayer.text = "\"" + nicknames[nightIndex] + "\"";
+
         for (int i = 0; i < johab[0]; i++)
         {
             buttonNights[i].GetComponentInChildren<Text>().text = nicknames[i];
@@ -144,10 +161,110 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void ButtonToMorning()
+    public void ButtonTouch()
     {
-        panelNight.SetActive(false);
-        TimeToMorning();
+        if (alives[nightIndex])
+        {
+            buttonNight.SetActive(false);
+            scrollNight.SetActive(true);
+            scrollNight.GetComponentInChildren<Scrollbar>().value = 1;
+        }
+        else
+        {
+            buttonNext.SetActive(true);
+        }
+    }
+
+    private int RandomOneOfMafia()
+    {
+        if (members[1] == 1)
+            return nightIndex;
+
+        int[] idx = new int[members[0]];
+
+        for (int i = 0; i < idx.Length; i++)
+        {
+            idx[i] = i;
+        }
+
+        for (int i = 0; i < idx.Length; i++)
+        {
+            int temp = idx[i];
+            int randomIndex = Random.Range(0, idx.Length);
+            idx[i] = idx[randomIndex];
+            idx[randomIndex] = temp;
+        }
+
+        for (int i = 0; i < idx.Length; i++)
+        {
+            if (players[idx[i]] == 1)
+                return idx[i];
+        }
+
+        return 16;
+    }
+
+    public void ButtonNightPick()
+    {
+        int pick = int.Parse(EventSystem.current.currentSelectedGameObject.name);
+
+        if (players[nightIndex] == 1)
+        {
+            if (nightIndex == killermafia)
+            {
+                mafiaPick = pick;
+            }
+        }
+        else if (players[nightIndex] == 2)
+        {
+            doctorPick = pick;
+        }
+        else if (players[nightIndex] == 3)
+        {
+            copPick = pick;
+
+            textCop.gameObject.SetActive(true);
+            if (players[copPick] == 1)
+                textCop.text = "O";
+            else
+                textCop.text = "X";
+        }
+        else
+        {
+            // 시민 ㅇㅅㅇ
+        }
+
+        scrollNight.SetActive(false);
+        buttonNext.SetActive(true);
+    }
+
+    public void ButtonNightNext()
+    {
+        nightIndex += 1;
+        textPlayer.text = "\"" + nicknames[nightIndex] + "\"";
+
+        textCop.gameObject.SetActive(false);
+
+        buttonNight.SetActive(true);
+        if (nightIndex == johab[0] - 1)
+            EventSystem.current.currentSelectedGameObject.GetComponentInChildren<Text>().text = "END";
+
+        else if (nightIndex == johab[0])
+        {
+            if(doctorPick == mafiaPick || mafiaPick == 16)
+            {
+                // 아무일도 없었다...!
+            }
+            else
+            {
+                Elimination(mafiaPick);
+            }
+
+            panelNight.SetActive(false);
+            TimeToMorning();
+        }
+
+        buttonNext.SetActive(false);
     }
 
     public void CheckGameOver()

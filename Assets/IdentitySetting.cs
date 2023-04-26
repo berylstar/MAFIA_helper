@@ -8,8 +8,10 @@ public class IdentitySetting : MonoBehaviour
     public GameController GC;
     public GameObject panelIdentity;
     public Text textPlayer, textTouch, textMafia, textButton;
+    public GameObject buttonNext;
 
     private bool isClick = false;
+    private bool isCheck = false;
     private int index = 0;
 
     private void Update()
@@ -23,6 +25,8 @@ public class IdentitySetting : MonoBehaviour
                 textMafia.text = GC.FindMafia(index);
             else
                 textMafia.text = "";
+
+            isCheck = true;
         }
         else
         {
@@ -30,6 +34,9 @@ public class IdentitySetting : MonoBehaviour
             textTouch.text = "TOUCH";
             textMafia.text = "";
         }
+
+        buttonNext.SetActive(isCheck);
+
     }
 
     public void ButtonNext()
@@ -47,6 +54,8 @@ public class IdentitySetting : MonoBehaviour
             GC.FirstMorning();
             GC.TimeToMorning();
         }
+
+        isCheck = false;
     }
 
     public void PointerDown()
