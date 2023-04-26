@@ -9,7 +9,6 @@ public class IdentitySetting : MonoBehaviour
     public GameObject panelIdentity;
     public Text textPlayer, textTouch, textMafia, textButton;
 
-    private float pointerTime = 0f;
     private bool isClick = false;
     private int index = 0;
 
@@ -45,6 +44,7 @@ public class IdentitySetting : MonoBehaviour
         else
         {
             panelIdentity.SetActive(false);
+            GC.TimeToMorning();
         }
     }
 

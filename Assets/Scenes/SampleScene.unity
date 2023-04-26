@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &9919583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 32287562}
   m_OnClick:
     m_PersistentCalls:
@@ -748,7 +748,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &104931147
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 195558346}
   m_OnClick:
     m_PersistentCalls:
@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1581413079}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -1708,7 +1708,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 274812670}
   m_OnClick:
     m_PersistentCalls:
@@ -2355,7 +2355,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &324688931
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2507,7 +2507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &369890051
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2713,7 +2713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &395725070
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2867,7 +2867,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &430197203
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2888,7 +2888,7 @@ GameObject:
   - component: {fileID: 449776429}
   - component: {fileID: 449776428}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: TextAllPerson
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2946,7 +2946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC778\uC6D0 : X"
+  m_Text: "\uC0DD\uC874 \uC778\uC6D0 : X"
 --- !u!222 &449776429
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3452,7 +3452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1490896784}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -3739,7 +3739,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &521322030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4030,7 +4030,7 @@ GameObject:
   - component: {fileID: 583071281}
   - component: {fileID: 583071280}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextDay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4088,7 +4088,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1 \uBC88\uC9F8 \uC544\uCE68"
+  m_Text: "1 \uC77C\uCC28 \uC544\uCE68"
 --- !u!222 &583071281
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4472,7 +4472,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 596434824}
   m_OnClick:
     m_PersistentCalls:
@@ -4548,7 +4548,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4651,6 +4651,26 @@ MonoBehaviour:
   - 
   - 
   - 
+  panelMorning: {fileID: 2041217777}
+  buttons:
+  - {fileID: 596434823}
+  - {fileID: 1782412720}
+  - {fileID: 1922829664}
+  - {fileID: 195558345}
+  - {fileID: 1002799918}
+  - {fileID: 1501602496}
+  - {fileID: 32287561}
+  - {fileID: 1155552177}
+  - {fileID: 1109549109}
+  - {fileID: 1092942027}
+  - {fileID: 1686573040}
+  - {fileID: 1770922446}
+  - {fileID: 1945774380}
+  - {fileID: 274812669}
+  - {fileID: 1191689108}
+  textDay: {fileID: 583071280}
+  textAllPerson: {fileID: 449776428}
+  panelNight: {fileID: 588261434}
 --- !u!1 &697594461
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,7 +5354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &906674509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5546,7 +5566,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &979364420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5776,7 +5796,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1002799919}
   m_OnClick:
     m_PersistentCalls:
@@ -5889,7 +5909,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1014728680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6158,8 +6178,8 @@ RectTransform:
   m_Father: {fileID: 1935650273}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.7222222}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6234,7 +6254,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6655,7 +6675,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1092942028}
   m_OnClick:
     m_PersistentCalls:
@@ -6919,7 +6939,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1109549110}
   m_OnClick:
     m_PersistentCalls:
@@ -7468,7 +7488,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1155552178}
   m_OnClick:
     m_PersistentCalls:
@@ -7647,7 +7667,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1171577857
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7726,7 +7746,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1183978378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7813,7 +7833,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1191689109}
   m_OnClick:
     m_PersistentCalls:
@@ -7926,7 +7946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1210274461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8312,7 +8332,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1239249860
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8675,7 +8695,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1316029746
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9266,7 +9286,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1501602497}
   m_OnClick:
     m_PersistentCalls:
@@ -9417,7 +9437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &1538460770
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10333,7 +10353,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1686573041}
   m_OnClick:
     m_PersistentCalls:
@@ -10687,7 +10707,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1770922447}
   m_OnClick:
     m_PersistentCalls:
@@ -10887,7 +10907,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1782412721}
   m_OnClick:
     m_PersistentCalls:
@@ -11320,7 +11340,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1922829665}
   m_OnClick:
     m_PersistentCalls:
@@ -11477,7 +11497,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1945774381}
   m_OnClick:
     m_PersistentCalls:
@@ -11892,7 +11912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2041217778
 RectTransform:
   m_ObjectHideFlags: 0

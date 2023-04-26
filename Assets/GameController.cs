@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // MAFIA : 1
 // DOCTOR : 2
@@ -9,6 +10,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [Header ("Information")]
     public int[] johab = { 0, 0, 0, 0, 0 };     // 총인원, 마피아, 의사, 경찰, 시민
     public int[] players = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public string[] nicknames = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
@@ -63,14 +65,48 @@ public class GameController : MonoBehaviour
 
     public string FindMafia(int my)
     {
+        if (johab[1] == 1)
+            return "";
+
         string str = "";
 
         for (int i = 0; i < johab[0]; i++)
         {
             if (players[i] == 1 && i != my)
-                str += "\"" + nicknames[i] + "\"";
+                str += "\n<" + nicknames[i] + ">";
         }
 
         return "다른 마피아는\n" + str + "\n입니다.";
+    }
+
+    [Header ("Morning")]
+    public GameObject panelMorning;
+    public Button[] buttons;
+    public Text textDay, textAllPerson;
+    private int day = 1;
+
+    [Header ("Night")]
+    public GameObject panelNight;
+
+    public void TimeToMorning()
+    {
+        // 누가 죽었는지
+
+        // 게임 오버 체크
+
+        panelMorning.SetActive(true);
+        textDay.text = day + " 일차 아침";
+        textAllPerson.text = "생존 인원 : " + johab[0];
+
+        for (int i = 0; i < johab[0]; i++)
+        {
+            buttons[i].GetComponentInChildren<Text>().text = nicknames[i];
+            buttons[i].interactable = true;
+        }
+    }
+
+    public void TimeToNight()
+    {
+
     }
 }
