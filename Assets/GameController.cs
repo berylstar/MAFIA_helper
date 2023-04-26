@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 // MAFIA : 1
 // DOCTOR : 2
@@ -10,10 +11,11 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    [Header ("Information")]
+    [Header ("Game System")]
     public int[] johab = { 0, 0, 0, 0, 0 };     // 총인원, 마피아, 의사, 경찰, 시민
     public int[] players = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public string[] nicknames = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
+    public bool[] alives = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
     public void IdentityShuffle()
     {
@@ -47,6 +49,8 @@ public class GameController : MonoBehaviour
                 players[idx[i]] = 3;
             else
                 players[idx[i]] = 4;
+
+            alives[i] = true;
         }
     }
 
@@ -76,37 +80,83 @@ public class GameController : MonoBehaviour
                 str += "\n<" + nicknames[i] + ">";
         }
 
-        return "다른 마피아는\n" + str + "\n입니다.";
+        return "마피아 팀 : \n" + str;
     }
 
     [Header ("Morning")]
     public GameObject panelMorning;
-    public Button[] buttons;
+    public Button[] buttonMornings;
     public Text textDay, textAllPerson;
-    private int day = 1;
+    private int day = 0;
+    public int[] members = { 0, 0, 0, 0, 0 };
 
     [Header ("Night")]
     public GameObject panelNight;
+    public Button[] buttonNights;
+    public Text textPlayer;
+
+    public void FirstMorning()
+    {
+        members = (int[])johab.Clone();
+    }
 
     public void TimeToMorning()
     {
         // 누가 죽었는지
 
-        // 게임 오버 체크
+        CheckGameOver();
 
         panelMorning.SetActive(true);
+
+        day += 1;
         textDay.text = day + " 일차 아침";
-        textAllPerson.text = "생존 인원 : " + johab[0];
+        textAllPerson.text = "생존 인원 : " + members[0];
 
         for (int i = 0; i < johab[0]; i++)
         {
-            buttons[i].GetComponentInChildren<Text>().text = nicknames[i];
-            buttons[i].interactable = true;
+            buttonMornings[i].GetComponentInChildren<Text>().text = nicknames[i];
+            buttonMornings[i].interactable = alives[i];
         }
+    }
+
+    public void ButtonVote()
+    {
+        int thisdie = int.Parse(EventSystem.current.currentSelectedGameObject.name);
+
+        members[0] -= 1;                    // 총원 한 명 감소
+        members[players[thisdie]] -= 1;     // 해당 직업 한 명 감소
+        alives[thisdie] = false;            // 해당 사람 죽음
+
+        panelMorning.SetActive(false);
+        TimeToNight();
     }
 
     public void TimeToNight()
     {
+        CheckGameOver();
 
+        panelNight.SetActive(true);
+
+        for (int i = 0; i < johab[0]; i++)
+        {
+            buttonNights[i].GetComponentInChildren<Text>().text = nicknames[i];
+            buttonNights[i].interactable = alives[i];
+        }
+    }
+
+    public void ButtonToMorning()
+    {
+        panelNight.SetActive(false);
+        TimeToMorning();
+    }
+
+    public void CheckGameOver()
+    {
+        if (members[1] <= 0)
+            print("시민 승리");
+        else if (members[1] >= members[2] + members[3] + members[4])
+            print("마피아 승리");
+        else
+            print("게임 계속 진행");
     }
 }

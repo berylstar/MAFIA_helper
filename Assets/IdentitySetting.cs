@@ -44,6 +44,7 @@ public class IdentitySetting : MonoBehaviour
         else
         {
             panelIdentity.SetActive(false);
+            GC.FirstMorning();
             GC.TimeToMorning();
         }
     }
