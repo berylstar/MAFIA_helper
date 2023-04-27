@@ -7,7 +7,7 @@ public class NicknameSetting : MonoBehaviour
 {
     public GameController GC;
     public InputField[] inputs;
-    public Button buttonGameStart;
+    public Button buttonNext;
     public GameObject panelNickname, panelGame;
 
     private void Start()
@@ -28,7 +28,7 @@ public class NicknameSetting : MonoBehaviour
             }
         }
 
-        buttonGameStart.interactable = true;
+        buttonNext.interactable = true;
     }
 
     public void ButtonGameStart()

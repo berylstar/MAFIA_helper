@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour
                 str += "\n<" + nicknames[i] + ">";
         }
 
-        return "¸¶ÇÇ¾Æ ÆÀ : \n" + str;
+        return "¸¶ÇÇ¾Æ ÆÀ" + str;
     }
 
     [Header ("Morning")]
