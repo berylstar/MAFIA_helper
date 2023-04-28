@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     public int[] players = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public string[] nicknames = { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
     public bool[] alives = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+    public GameObject panelGameOver;
+    public Text textWin, textMafia;
 
     public void IdentityShuffle()
     {
@@ -106,8 +108,6 @@ public class GameController : MonoBehaviour
 
     public void TimeToMorning()
     {
-        // ´©°¡ Á×¾ú´ÂÁö
-
         CheckGameOver();
 
         panelMorning.SetActive(true);
@@ -177,9 +177,6 @@ public class GameController : MonoBehaviour
 
     private int RandomOneOfMafia()
     {
-        if (members[1] == 1)
-            return nightIndex;
-
         int[] idx = new int[members[0]];
 
         for (int i = 0; i < idx.Length; i++)
@@ -197,7 +194,7 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < idx.Length; i++)
         {
-            if (players[idx[i]] == 1)
+            if (players[idx[i]] == 1 && alives[idx[i]])
                 return idx[i];
         }
 
@@ -270,10 +267,30 @@ public class GameController : MonoBehaviour
     public void CheckGameOver()
     {
         if (members[1] <= 0)
-            print("½Ã¹Î ½Â¸®");
+        {
+            textWin.text = "½Ã¹Î ½Â¸® !";
+            panelGameOver.SetActive(true);
+        }
+            
         else if (members[1] >= members[2] + members[3] + members[4])
-            print("¸¶ÇÇ¾Æ ½Â¸®");
-        else
-            print("°ÔÀÓ °è¼Ó ÁøÇà");
+        {
+            textWin.text = "¸¶ÇÇ¾Æ ½Â¸® !";
+            panelGameOver.SetActive(true);
+        }
+
+        string strr = "<¸¶ÇÇ¾Æ>\n";
+
+        for (int i = 0; i < johab[0]; i++)
+        {
+            if (players[i] == 1)
+                strr += nicknames[i].ToString() + "\n";
+        }
+
+        textMafia.text = strr;
+    }
+
+    public void ButtonRestart()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 }
